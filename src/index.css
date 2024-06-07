@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Customize Scrollbars for a Professional Look */
+body::-webkit-scrollbar {
+  width: 3px; /* Adjust the scrollbar width */
+  height: 3px; /* Adjust the scrollbar height */
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(#ffffff, #D9AF8B);
+  border-radius: 8px; /* Create a rounded appearance */
+}
+body.scroll-top::-webkit-scrollbar-thumb {
+  background: linear-gradient(#ffffff, #D9AF8B);
+  border-radius: 8px; /* Create a rounded appearance */
+}
+body.scroll-bottom::-webkit-scrollbar-thumb {
+  background: linear-gradient( #D9AF8B, #ffffff);
+  border-radius: 8px; /* Create a rounded appearance */
+}
+
+
+/* custom scroll-bar */
+/* Customize Scrollbars for a Professional Look */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px; /* Adjust the scrollbar width */
+  height: 1px; /* Adjust the scrollbar height */
+  background-color: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(#ffffff, #D9AF8B);
+  border-radius: 8px; /* Create a rounded appearance */
+}
+.custom-scrollbar.scroll-top::-webkit-scrollbar-thumb {
+  background: linear-gradient(#ffffff, #D9AF8B);
+  border-radius: 8px; /* Create a rounded appearance */
+}
+.custom-scrollbar.scroll-bottom::-webkit-scrollbar-thumb {
+  background: linear-gradient( #D9AF8B, #ffffff);
+  border-radius: 8px; /* Create a rounded appearance */
+}
+
+
+.animated-element {
+  animation: rotateAnimation 4s linear infinite;
+}
+
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* HeaderSection.css */
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+/* Additional styling for the search bar */
+.search-bar {
+  position: fixed;
+  left: 50%;
+  margin-left: -150px;
+  padding: 10px;
+  background-color: #fff;
+  opacity: 0;
+}
+
+/* Apply the animation to the search bar */
+.search-bar.open {
+  animation: slideIn 0.5s ease-in-out;
+  opacity: 1;
+}
+
+/* Apply the animation when the search bar is closed */
+.search-bar.closed {
+  animation: slideOut 0.5s ease-in-out;
+  opacity: 0;
+}
+
+/* product category animation */
+
+.category-item:hover .animation-text {
+  opacity: 1;
+  animation: fadeInText 2s ease-in-out;
+}
+
+.category-item .animation-text {
+  opacity: 0;
+  animation: fadeOutText 2s ease-in-out;
+}
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(-200%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes fadeOutText {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-200%);
+  }
+}
+
+/* product item hover effect */
+.product-card:hover .add-cart {
+  opacity: 1;
+  animation: slideUpCart 1s ease-in-out;
+}
+.product-card .add-cart {
+  opacity: 0;
+  animation: slideDownCart 1s ease-in-out;
+}
+
+@keyframes slideUpCart {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideDownCart {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+.product-card:hover .wish-item {
+  opacity: 1;
+  animation: slideDownWishItem 1s ease-in-out;
+}
+.product-card .wish-item {
+  opacity: 0;
+  animation: slideUpWishItem 1s ease-in-out;
+}
+
+@keyframes slideUpWishItem {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slideDownWishItem {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+/* marquee text animation */
+.marquee-container {
+  overflow: hidden;
+}
+
+.marquee-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(-120%);
+  }
+}
+
+/* product tab animation */
+.tab {
+    cursor: pointer;
+    position: relative;
+}
+
+.tab::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #D9AF8B;
+    transition: width 1s ease;
+}
+
+.tab:hover::before {
+    width: 100%;
+}
+
+.tab.active::before {
+    width: 100%;
+}
+
